@@ -1,6 +1,7 @@
 import React from "react";
 import Error from "../error";
 import Link from "next/link";
+import WebSearchResults from "@/components/WebSearchResults";
 
 const WebSearchPage = async ({ searchParams }) => {
   const response = await fetch(
@@ -23,14 +24,7 @@ const WebSearchPage = async ({ searchParams }) => {
     );
   }
   // console.log(data);
-  return (
-    <div>
-      {results &&
-        results.map((result, i) => {
-          return <h1 key={i}>{result.title}</h1>;
-        })}
-    </div>
-  );
+  return <div>{results && <WebSearchResults results={data} />}</div>;
 };
 
 export default WebSearchPage;
