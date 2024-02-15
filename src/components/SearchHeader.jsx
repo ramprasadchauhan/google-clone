@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import SearchBox from "./SearchBox";
+import SearchBox from "./SearchBox.jsx";
 import { RiSettings3Line } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
 import SearchHeaderOptions from "./SearchHearderOptions";
 const SearchHeader = () => {
   return (
     <header className="sticky top-0 bg-white">
-      <div className="flex w-full px-4 items-center justify-between">
+      <div className="flex mt-4 w-full px-4 items-center justify-between">
         <Link href="/">
           <Image
-            className="h-16 w-fit"
+            className="sm:h-16 h-8 w-fit"
             src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Google_logo_%282010-2013%29.svg"
             alt="Google Logo"
             width={120}
@@ -31,6 +31,7 @@ const SearchHeader = () => {
           Sign In
         </button>
       </div>
+      <SearchHeaderOptions />
     </header>
   );
 };
