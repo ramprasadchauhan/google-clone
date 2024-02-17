@@ -11,6 +11,7 @@ const ImageSearchPage = async ({ searchParams }) => {
   const contextKey = process.env.NEXT_CONTEXT_KEY;
   const startIndex = searchParams.start || "1";
   console.log(apiKey);
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const response = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${contextKey}&q=${searchParams.searchTerm}&searchType=image&start=${startIndex}`
   );
